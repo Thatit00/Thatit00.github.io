@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站 - 毛玻璃风格</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url('background/background-image.jpg'); /* 替换为您的背景图片路径 */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        nav {
+            background-color: rgba(139, 69, 19, 1); /* 移除透明度 */
+            color: #f4e9d9;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li a {
+            color: #f4e9d9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        section {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        h1, h2 {
+            color: #8b4513;
+            border-bottom: 2px solid rgba(211, 183, 142, 0.5);
+            padding-bottom: 10px;
+        }
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .work-item {
+            background-color: rgba(249, 243, 232, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+        .links a {
+            display: inline-block;
+            margin-right: 20px;
+            color: #8b4513;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+        .links a:hover {
+            color: #a0522d;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(211, 183, 142, 0.5);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8b4513;
+            font-weight: bold;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+        }
+        section.active {
+            transform: scale(1.03);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        section.inactive {
+            transform: scale(1);
+            background-color: rgba(255, 255, 255, 0.7);
+            opacity: 0.8;
+        }
+        body {
+            scroll-padding-top: 70px;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid rgba(139, 69, 19, 0.5);
+        }
+        
+        .intro-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #intro h1 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: rgba(139, 69, 19, 1); /* 移除透明度 */
+            color: #f4e9d9;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        #contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #contact ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        #contact a, #about a {
+            color: #8b4513;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover, #about a:hover {
+            color: #a0522d;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#intro">简介</a></li>
+            <li><a href="#works">作品一览</a></li>
+            <li><a href="#portfolio">作品集</a></li>
+            <li><a href="#blog">博客</a></li>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#contact">联系方式</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="intro" class="active">
+            <div class="intro-content">
+                <img src="images/your-photo.jpg" alt="个人照片" class="profile-image">
+                <h1>欢迎来到我的个人网站</h1>
+                <p>我是[您的名字]，一名充满激情的互联网产品设计师。我专注于用户体验设计和界面设计，同时热衷于通过摄影捕捉生活中的美好瞬间。</p>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>作品一览</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <div class="image-placeholder">电商App设计</div>
+                    <h3>电商App设计</h3>
+                    <p>优化用户购物体验的移动应用设计</p>
+                </div>
+                <div class="work-item">
+                    <div class="image-placeholder">社交媒体界面重设计</div>
+                    <h3>社交媒体界面重设计</h3>
+                    <p>提升用户互动的社交平台界面优化</p>
+                </div>
+                <div class="work-item">
+                    <div class="image-placeholder">摄影作品集</div>
+                    <h3>摄影作品集</h3>
+                    <p>记录城市与自然之美的摄影系列</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>作品集文件链接</h2>
+            <div class="links">
+                <a href="#">完整UI/UX设计作品集PDF</a>
+                <a href="#">产品设计案例展示</a>
+                <a href="#">摄影作品集</a>
+            </div>
+            <h3>项目详情</h3>
+            <ul>
+                <li>
+                    <h4>电商App设计</h4>
+                    <p>为一家新兴电商平台设计的移动应用，注重简洁的界面和流畅的购物流程，提升用户转化率。</p>
+                </li>
+                <li>
+                    <h4>社交媒体界面重设计</h4>
+                    <p>对现有社交平台进行界面重设计，优化信息展示和用户互动功能，提高用户粘性。</p>
+                </li>
+                <li>
+                    <h4>城市风光摄影系列</h4>
+                    <p>一组展现城市建筑与自然景观交融之美的摄影作品，捕捉城市的独特魅力和生机。</p>
+                </li>
+            </ul>
+            <p>以上项目展示了我在用户界面设计、用户体验优化和摄影艺术方面的技能和创意。每个项目都力求在美学和功能性之间取得平衡，为用户带来愉悦的体验。</p>
+            <p>如果您想了解更多关于这些项目的详细信息，或者探讨潜在的合作机会，请随时与我联系。</p>
+        </section>
+
+        <section id="blog">
+            <h2>博客文章</h2>
+            <ul>
+                <li><a href="#">如何打造直观的用户界面</a></li>
+                <li><a href="#">色彩心理学在UI设计中的应用</a></li>
+                <li><a href="#">移动端设计的关键考量因素</a></li>
+                <li><a href="#">提升用户体验的10个小技巧</a></li>
+                <li><a href="#">从摄影角度看设计构图</a></li>
+                <li><a href="#">设计师应该了解的基础编程知识</a></li>
+                <li><a href="#">如何进行有效的用户研究</a></li>
+                <li><a href="#">设计系统的构建与维护</a></li>
+                <li><a href="#">数据可视化在产品设计中的运用</a></li>
+                <li><a href="#">如何培养设计灵感：从摄影中汲取创意</a></li>
+            </ul>
+        </section>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <p>我是一名充满热情的互联网产品设计师，专注于创造美观且易用的数字产品。我相信优秀的设计可以改善人们的生活质量，并致力于打造卓越的用户体验。</p>
+            <p>在我的职业生涯中，我曾参与过多个令人兴奋的项目，包括大型电商平台的用户界面优化和新兴社交媒体的产品设计。这些经历让我深刻理解了用户需求和市场趋势的重要性。</p>
+            <p>除了设计工作，我还热衷于摄影。通过镜头，我不仅捕捉美丽的画面，也培养了对细节的敏锐洞察力，这些都对我的设计工作有着积极的影响。我相信保持工作与兴趣的平衡对于保持创造力和灵感至关重要。</p>
+            <p>如果您对我的设计作品感兴趣，或者想要讨论潜在的合作机会，请随时与我联系。我总是乐于结识新朋友，探讨创新的设计理念！</p>
+        </section>
+
+        <section id="contact">
+            <h2>联系方式</h2>
+            <ul>
+                <li>邮箱：your.email@example.com</li>
+                <li>LinkedIn：<a href="#">您的LinkedIn链接</a></li>
+                <li>GitHub：<a href="#">您的GitHub链接</a></li>
+                <li>微信：您的微信号</li>
+            </ul>
+            <p>我很乐意听到您的反馈或讨论任何潜在的合作机会。请随时通过以上方式与我联系！</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 [您的名字]. 保留所有权利。</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main section');
+            const nav = document.querySelector('nav');
+
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+
+            function highlightSection() {
+                const scrollPosition = window.pageYOffset;
+                const viewportHeight = window.innerHeight;
+                const navHeight = nav.offsetHeight;
+
+                let activeSection = null;
+                let minDistance = Infinity;
+
+                sections.forEach((section) => {
+                    const rect = section.getBoundingClientRect();
+                    const distance = Math.abs(rect.top + rect.height / 2 - viewportHeight / 2);
+
+                    if (distance < minDistance) {
+                        minDistance = distance;
+                        activeSection = section;
+                    }
+                });
+
+                sections.forEach((section) => {
+                    if (section === activeSection) {
+                        section.classList.add('active');
+                        section.classList.remove('inactive');
+                    } else {
+                        section.classList.remove('active');
+                        section.classList.add('inactive');
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    const navHeight = nav.offsetHeight;
+                    const targetPosition = targetSection.offsetTop - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            window.addEventListener('scroll', throttle(highlightSection, 100));
+
+            highlightSection();
+        });
+    </script>
+</body>
+</html>
